@@ -15,7 +15,7 @@ class Plugins extends Base {
           await this._toggle(item.entityID, v);
           this.forceUpdate();
         }}
-        onUninstall={() => this._uninstall(item.entityID)}
+        onUninstall={item.entityID.startsWith("pc-") ? null : () => this._uninstall(item.entityID)}
       />
     );
   }
