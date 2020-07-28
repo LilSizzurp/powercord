@@ -125,6 +125,9 @@ class Base extends React.Component {
     }
 
     return items.sort((a, b) => {
+      if(a.entityID.startsWith("pc-")) return 1;
+      if(b.entityID.startsWith("pc-")) return -1;
+
       const nameA = a.manifest.name.toLowerCase();
       const nameB = b.manifest.name.toLowerCase();
 
