@@ -36,7 +36,7 @@ class BaseProduct extends React.PureComponent {
   }
 
   renderFooter () {
-    if (!this.props.product.discord && typeof this.props.goToSettings !== 'function' && (!this.props.core && typeof this.props.onUninstall !== 'function')) {
+    if (!this.props.product.discord && typeof this.props.goToSettings !== 'function' && typeof this.props.onUninstall !== 'function') {
       return null;
     }
 
@@ -57,7 +57,7 @@ class BaseProduct extends React.PureComponent {
             </Clickable>
           </Tooltip>}
           <div className='buttons'>
-            {!this.props.core && typeof this.props.onUninstall === 'function' &&
+            {typeof this.props.onUninstall === 'function' &&
             <Button
               onClick={() => this.props.onUninstall()}
               color={Button.Colors.RED}
